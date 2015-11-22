@@ -39,46 +39,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="#Learning Objective-C Runtime
+<meta name="description" content="文中对应的每小节都能在HBLearningRuntime找到
 
-文中对应的每小节都能在HBLearningRuntime找到
+Reference
+Apple Documentation
+Understanding the Objective-C Runtime
 
-##Reference
+Messaging（消息传递）学习 Objective-C Runtime小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：
 
-#####Apple Documentation
-#####Understanding the Objective-C Runtime
-
-##Messaging（消息传递）
-学习 Objective-C Runtime小结：Objective-C">
+在对象类的 dispatch table 中尝试找">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning Objective-C Runtime">
 <meta property="og:url" content="http://yoursite.com/2015/11/22/Learning-Objective-C-Runtime/index.html">
 <meta property="og:site_name" content="Hubert Posts">
-<meta property="og:description" content="#Learning Objective-C Runtime
+<meta property="og:description" content="文中对应的每小节都能在HBLearningRuntime找到
 
-文中对应的每小节都能在HBLearningRuntime找到
+Reference
+Apple Documentation
+Understanding the Objective-C Runtime
 
-##Reference
+Messaging（消息传递）学习 Objective-C Runtime小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：
 
-#####Apple Documentation
-#####Understanding the Objective-C Runtime
-
-##Messaging（消息传递）
-学习 Objective-C Runtime小结：Objective-C">
-<meta property="og:updated_time" content="2015-11-22T12:14:36.000Z">
+在对象类的 dispatch table 中尝试找">
+<meta property="og:updated_time" content="2015-11-22T12:29:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Objective-C Runtime">
-<meta name="twitter:description" content="#Learning Objective-C Runtime
+<meta name="twitter:description" content="文中对应的每小节都能在HBLearningRuntime找到
 
-文中对应的每小节都能在HBLearningRuntime找到
+Reference
+Apple Documentation
+Understanding the Objective-C Runtime
 
-##Reference
+Messaging（消息传递）学习 Objective-C Runtime小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：
 
-#####Apple Documentation
-#####Understanding the Objective-C Runtime
-
-##Messaging（消息传递）
-学习 Objective-C Runtime小结：Objective-C">
+在对象类的 dispatch table 中尝试找">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -232,27 +226,22 @@
       
 
       
-        <span itemprop="articleBody"><p>#Learning Objective-C Runtime</p>
-<blockquote>
+        <span itemprop="articleBody"><blockquote>
 <p>文中对应的每小节都能在<a href="https://github.com/Hubert-Lin/HBLearningRuntime" target="_blank" rel="external">HBLearningRuntime</a>找到</p>
 </blockquote>
-<p>##Reference</p>
-<ul>
-<li>#####<a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html" target="_blank" rel="external">Apple Documentation</a></li>
-<li>#####<a href="http://cocoasamurai.blogspot.jp/2010/01/understanding-objective-c-runtime.html" target="_blank" rel="external">Understanding the Objective-C Runtime</a></li>
+<h2 id="Reference">Reference</h2><ul>
+<li><h5 id="Apple_Documentation"><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html" target="_blank" rel="external">Apple Documentation</a></h5></li>
+<li><h5 id="Understanding_the_Objective-C_Runtime"><a href="http://cocoasamurai.blogspot.jp/2010/01/understanding-objective-c-runtime.html" target="_blank" rel="external">Understanding the Objective-C Runtime</a></h5></li>
 </ul>
-<p>##Messaging（消息传递）</p>
-<h4 id="学习_Objective-C_Runtime">学习 <a href="http://tech.glowing.com/cn/objective-c-runtime/" target="_blank" rel="external">Objective-C Runtime</a><br></h4><p>小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：<br></p>
+<h2 id="Messaging（消息传递）">Messaging（消息传递）</h2><h5 id="学习_Objective-C_Runtime">学习 <a href="http://tech.glowing.com/cn/objective-c-runtime/" target="_blank" rel="external">Objective-C Runtime</a><br></h5><p>小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：<br></p>
 <ol>
 <li>在对象类的 dispatch table 中尝试找到该消息。如果找到了，跳到相应的函数IMP去执行实现代码；</li>
 <li>如果没有找到，Runtime 会发送 <code>+resolveInstanceMethod:</code> 或者 <code>+resolveClassMethod:</code> 尝试去 resolve 这个消息；</li>
 <li>如果 resolve 方法返回 NO，Runtime 就发送 <code>-forwardingTargetForSelector:</code> 允许你把这个消息转发给另一个对象；</li>
 <li>如果没有新的目标对象返回， Runtime 就会发送 <code>-methodSignatureForSelector:</code> 和 <code>-forwardInvocation:</code> 消息。你可以发送 <code>-invokeWithTarget:</code> 消息来手动转发消息或者发送 <code>-doesNotRecognizeSelector:</code> 抛出异常。</li>
 </ol>
-<p>##Method Swizzling</p>
-<h4 id="学习_Method_Swizzling_和_AOP_实践">学习 <a href="http://tech.glowing.com/cn/method-swizzling-aop/" target="_blank" rel="external">Method Swizzling 和 AOP 实践</a></h4><p>小结：Method Swizzling 有利于解决一些琐碎事务。对于 Aspect Oriented Programming （面向切面编程）也有对runtime进行封装的第三方库<a href="https://github.com/steipete/Aspects" target="_blank" rel="external">Aspects</a></p>
-<p>##Associated Objects</p>
-<h4 id="学习_Associated_Objects">学习 <a href="http://nshipster.cn/associated-objects/" target="_blank" rel="external">Associated Objects</a><br></h4></span>
+<h2 id="Method_Swizzling">Method Swizzling</h2><h5 id="学习_Method_Swizzling_和_AOP_实践">学习 <a href="http://tech.glowing.com/cn/method-swizzling-aop/" target="_blank" rel="external">Method Swizzling 和 AOP 实践</a></h5><p>小结：Method Swizzling 有利于解决一些琐碎事务。对于 Aspect Oriented Programming （面向切面编程）也有对runtime进行封装的第三方库<a href="https://github.com/steipete/Aspects" target="_blank" rel="external">Aspects</a></p>
+<h2 id="Associated_Objects">Associated Objects</h2><h5 id="学习_Associated_Objects">学习 <a href="http://nshipster.cn/associated-objects/" target="_blank" rel="external">Associated Objects</a><br></h5></span>
       
     </div>
 
@@ -343,7 +332,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -381,7 +370,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习_Objective-C_Runtime"><span class="nav-number">1.</span> <span class="nav-text">学习 Objective-C Runtime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习_Method_Swizzling_和_AOP_实践"><span class="nav-number">2.</span> <span class="nav-text">学习 Method Swizzling 和 AOP 实践</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习_Associated_Objects"><span class="nav-number">3.</span> <span class="nav-text">学习 Associated Objects</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Apple_Documentation"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Apple Documentation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Understanding_the_Objective-C_Runtime"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Understanding the Objective-C Runtime</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Messaging（消息传递）"><span class="nav-number">2.</span> <span class="nav-text">Messaging（消息传递）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#学习_Objective-C_Runtime"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">学习 Objective-C Runtime</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method_Swizzling"><span class="nav-number">3.</span> <span class="nav-text">Method Swizzling</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#学习_Method_Swizzling_和_AOP_实践"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">学习 Method Swizzling 和 AOP 实践</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Associated_Objects"><span class="nav-number">4.</span> <span class="nav-text">Associated Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#学习_Associated_Objects"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">学习 Associated Objects</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
