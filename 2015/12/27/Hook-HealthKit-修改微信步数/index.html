@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="HealthKit,Hook," />
 
 
 
@@ -39,15 +39,32 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="想想还是要有追求">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hubert Posts">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="#Hook HealthKit - 以修改微信运动读数为例
+
+版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+看到有人把手机绑到狗狗身上来刷步数，让技术来拯救你吧。其实博主只是想把刚刚学到的一些越狱知识实践一下而已啦。
+##从何开始学逆向是本着说，逆向推动正向开发，但现在发现，其实正向也是推动逆向开发的。这次Hook HealthKit，我就先学习如何使用HealthKit，重点是如何读到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hook HealthKit - 修改微信步数">
+<meta property="og:url" content="http://yoursite.com/2015/12/27/Hook-HealthKit-修改微信步数/index.html">
 <meta property="og:site_name" content="Hubert Posts">
-<meta property="og:description" content="想想还是要有追求">
+<meta property="og:description" content="#Hook HealthKit - 以修改微信运动读数为例
+
+版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+看到有人把手机绑到狗狗身上来刷步数，让技术来拯救你吧。其实博主只是想把刚刚学到的一些越狱知识实践一下而已啦。
+##从何开始学逆向是本着说，逆向推动正向开发，但现在发现，其实正向也是推动逆向开发的。这次Hook HealthKit，我就先学习如何使用HealthKit，重点是如何读到">
+<meta property="og:image" content="http://yoursite.com/Hook-HealthKit_1.png">
+<meta property="og:updated_time" content="2015-12-27T12:33:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hubert Posts">
-<meta name="twitter:description" content="想想还是要有追求">
+<meta name="twitter:title" content="Hook HealthKit - 修改微信步数">
+<meta name="twitter:description" content="#Hook HealthKit - 以修改微信运动读数为例
+
+版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+看到有人把手机绑到狗狗身上来刷步数，让技术来拯救你吧。其实博主只是想把刚刚学到的一些越狱知识实践一下而已啦。
+##从何开始学逆向是本着说，逆向推动正向开发，但现在发现，其实正向也是推动逆向开发的。这次Hook HealthKit，我就先学习如何使用HealthKit，重点是如何读到">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +74,7 @@
   };
 </script>
 
-  <title> Hubert Posts </title>
+  <title> Hook HealthKit - 修改微信步数 | Hubert Posts </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -85,9 +102,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -155,9 +170,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -168,9 +183,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/12/27/Hook-HealthKit-修改微信步数/" itemprop="url">
-                Hook HealthKit - 修改微信步数
-              </a>
+              Hook HealthKit - 修改微信步数
             
           
         </h1>
@@ -205,8 +218,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><p>#Hook HealthKit - 以修改微信运动读数为例</p>
+        <span itemprop="articleBody"><p>#Hook HealthKit - 以修改微信运动读数为例</p>
 <blockquote>
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
 </blockquote>
@@ -225,114 +237,58 @@
 <p>另外可以用统计集合查询<code>HKStatisticsQuery</code>和样本查询<code>HKStatisticsCollectionQuery</code>都可以查到<code>HKQuantityTypeIdentifierStepCount</code>的读数。</p>
 <p>##定位到微信运动读取数据的Method<br>现在很明确，只需要Hook<code>HKHealthStore</code>的<code>-executeQuery:</code>,看他查询的是哪个<code>HKHealthStore</code>就Ok了。<br><br>博主使用的是<code>iOSOpenDev</code> <code>Xcode 7.2</code>开发<br><br><img src="Hook-HealthKit_1.png" alt=""></p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/HealthKit/" rel="tag">#HealthKit</a>
+          
+            <a href="/tags/Hook/" rel="tag">#Hook</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/22/Learning-Objective-C-Runtime/" rel="next">Learning Objective-C Runtime</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/11/22/Learning-Objective-C-Runtime/" itemprop="url">
-                Learning Objective-C Runtime
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-11-22T19:57:59+08:00" content="2015-11-22">
-            2015-11-22
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/11/22/Learning-Objective-C-Runtime/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/22/Learning-Objective-C-Runtime/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>文中对应的每小节都能在<a href="https://github.com/Hubert-Lin/HBLearningRuntime" target="_blank" rel="external">HBLearningRuntime</a>找到</p>
-</blockquote>
-<h2 id="Reference">Reference</h2><ul>
-<li><h5 id="Apple_Documentation"><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html" target="_blank" rel="external">Apple Documentation</a></h5></li>
-<li><h5 id="Understanding_the_Objective-C_Runtime"><a href="http://cocoasamurai.blogspot.jp/2010/01/understanding-objective-c-runtime.html" target="_blank" rel="external">Understanding the Objective-C Runtime</a></h5></li>
-</ul>
-<h2 id="Messaging（消息传递）">Messaging（消息传递）</h2><h5 id="学习_Objective-C_Runtime">学习 <a href="http://tech.glowing.com/cn/objective-c-runtime/" target="_blank" rel="external">Objective-C Runtime</a><br></h5><p>小结：Objective-C 中给一个对象发送消息会经过以下几个步骤：<br></p>
-<ol>
-<li>在对象类的 dispatch table 中尝试找到该消息。如果找到了，跳到相应的函数IMP去执行实现代码；</li>
-<li>如果没有找到，Runtime 会发送 <code>+resolveInstanceMethod:</code> 或者 <code>+resolveClassMethod:</code> 尝试去 resolve 这个消息；</li>
-<li>如果 resolve 方法返回 NO，Runtime 就发送 <code>-forwardingTargetForSelector:</code> 允许你把这个消息转发给另一个对象；</li>
-<li>如果没有新的目标对象返回， Runtime 就会发送 <code>-methodSignatureForSelector:</code> 和 <code>-forwardInvocation:</code> 消息。你可以发送 <code>-invokeWithTarget:</code> 消息来手动转发消息或者发送 <code>-doesNotRecognizeSelector:</code> 抛出异常。</li>
-</ol>
-<h2 id="Method_Swizzling">Method Swizzling</h2><h5 id="学习_Method_Swizzling_和_AOP_实践">学习 <a href="http://tech.glowing.com/cn/method-swizzling-aop/" target="_blank" rel="external">Method Swizzling 和 AOP 实践</a></h5><p>小结：Method Swizzling 有利于解决一些琐碎事务。对于 Aspect Oriented Programming （面向切面编程）也有对runtime进行封装的第三方库<a href="https://github.com/steipete/Aspects" target="_blank" rel="external">Aspects</a></p>
-<h2 id="Associated_Objects">Associated Objects</h2><h5 id="学习_Associated_Objects">学习 <a href="http://nshipster.cn/associated-objects/" target="_blank" rel="external">Associated Objects</a><br></h5></span>
-        
+    <div class="post-spread">
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/12/27/Hook-HealthKit-修改微信步数/"
+                   data-title="Hook HealthKit - 修改微信步数" data-url="http://yoursite.com/2015/12/27/Hook-HealthKit-修改微信步数/">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -349,6 +305,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -406,6 +371,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -490,6 +466,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
